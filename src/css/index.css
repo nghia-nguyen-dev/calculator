@@ -1,5 +1,21 @@
 @import "css/reset";
 
 body {
-    background-color: #d7dfe5;
+	background-color: hsl(206, 21%, 87%);
+}
+
+.App {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Calculator {
+	height: 600px;
+	width: 362px;
+
+	border-radius: 50px;
+	background: hsl(210, 21%, 87%);
+	box-shadow: 18px 18px 36px #bebebe, -18px -18px 36px #ffffff;
 }
