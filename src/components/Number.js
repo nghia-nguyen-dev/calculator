@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import { useDispatch } from "react-redux";
 
-const Number = ({children, className}) => {
-    return (
-        <div className={`Number pad ${className}`}>
-            {children}
-        </div>
-    )
-}
+const Number = ({ children, className }) => {
+	const dispatch = useDispatch();
 
-export default Number
+	const handleClick = () =>
+		dispatch({
+			type: "CLICK_NUM",
+			value: children,
+		});
+
+	return (
+		<div className={`Number pad ${className}`} onClick={handleClick}>
+			{children}
+		</div>
+	);
+};
+
+export default Number;
