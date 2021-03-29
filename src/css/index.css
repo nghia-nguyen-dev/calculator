@@ -2,8 +2,8 @@
 @import "css/font";
 
 :root {
-	--calc-offset-x: 24px;
-	--calc-offset-y: 24px;
+	--calc-offset-x: 20px;
+	--calc-offset-y: 20px;
 	--calc-blur-radius: 54px;
 
 	--cool-white: hsl(206, 21%, 87%);
@@ -33,9 +33,9 @@ body {
 
 	border-radius: 36px;
 	background: var(--warm-white);
-	box-shadow: var(--calc-offset-x) var(--calc-offset-y) var(--calc-blur-radius) hsl(202, 28%, 80%),
+	box-shadow: var(--calc-offset-x) var(--calc-offset-y) var(--calc-blur-radius) hsl(202, 24%, 76%),
 		calc(var(--calc-offset-x) * -1) calc(var(--calc-offset-y) * -1)
-			var(--calc-blur-radius) hsl(206, 0%, 100%);
+			var(--calc-blur-radius) rgba(255, 255, 255, 0.84);
 }
 
 .Screen {
@@ -64,7 +64,7 @@ body {
 
 	border-radius: 50%;
 	background: var(--warm-white);
-	box-shadow: 4px 4px 12px #c7c7c7, -4px -4px 12px #f9f9f9;
+	box-shadow: 3px 3px 8px hsl(202, 24%, 74%), -3px -3px 8px #f9f9f9ef;
 }
 
 .Pad::before {

@@ -24,10 +24,9 @@ const Numpad = () => {
          <Pad>3</Pad>
          <Pad>+</Pad>
 
-         <Pad>7</Pad>
+         <Pad>0</Pad>
          <Pad>8</Pad>
          <Pad>9</Pad>
-         <Pad>X</Pad>
         </div>
     )
 }
