@@ -1,8 +1,17 @@
 @import "css/reset";
 @import "css/font";
 
+:root {
+	--calc-offset-x: 24px;
+	--calc-offset-y: 24px;
+	--calc-blur-radius: 54px;
+
+	--cool-white: hsl(206, 21%, 87%);
+	--warm-white: hsl(210, 21%, 87%);
+}
+
 body {
-	background-color: hsl(206, 21%, 87%);
+	background-color: var(--cool-white);
 }
 
 .App {
@@ -15,23 +24,51 @@ body {
 .Calculator {
 	font-family: "Inter", sans-serif;
 	font-weight: 300;
-	font-size: 48px;
-	color: hsla(210, 25%, 22%, 0.7);
+	font-size: 60px;
+	color: hsla(210, 25%, 22%, 0.75);
 
-	height: 600px;
+	height: auto;
 	width: 362px;
 	padding: 16px;
 
 	border-radius: 36px;
-	background: hsl(210, 21%, 87%);
-	box-shadow: 18px 18px 36px #bebebe, -18px -18px 36px #ffffff;
+	background: var(--warm-white);
+	box-shadow: var(--calc-offset-x) var(--calc-offset-y) var(--calc-blur-radius) hsl(202, 28%, 80%),
+		calc(var(--calc-offset-x) * -1) calc(var(--calc-offset-y) * -1)
+			var(--calc-blur-radius) hsl(206, 0%, 100%);
 }
 
 .Screen {
 	border-radius: 20px;
-	height: 30%;
+	height: 170px;
 
 	display: flex;
 	justify-content: flex-end;
 	align-items: end;
+	margin-bottom: 20px;
+}
+
+.Numpad {
+	display: grid;
+	gap: 15px;
+	grid-template-columns: repeat(4, 1fr);
+	/* grid-template-rows: repeat(4, 1fr); */
+}
+
+.Pad {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 24px;
+
+	border-radius: 50%;
+	background: var(--warm-white);
+	box-shadow: 4px 4px 12px #c7c7c7, -4px -4px 12px #f9f9f9;
+}
+
+.Pad::before {
+	content: "";
+	padding-bottom: 100%;
+	display: block;
 }
