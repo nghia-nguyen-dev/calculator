@@ -6,10 +6,10 @@ const Misc = ({children}) => <div className="Misc pad">{children}</div>
 
 const Numpad = () => {
 	return (
-		<div className="Numpad" pho="lol">
+		<div className="Numpad">
 			<Misc>C</Misc>
 			<Misc>&#177;</Misc>
-			<Math>%</Math>
+			<Misc>%</Misc>
 			<Math>&#247;</Math>
 
         	<Number>7</Number>

@@ -9,7 +9,7 @@
 	--cool-white: hsl(206, 21%, 87%);
 	--warm-white: hsl(210, 21%, 87%);
 
-	--main-color: hsla(210, 42%, 22%, 0.72);
+	--main-color: hsla(210, 42%, 22%, 0.7);
 }
 
 body {
@@ -25,7 +25,7 @@ body {
 
 .Calculator {
 	font-family: "Inter", sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 60px;
 	color: var(--main-color);
 
@@ -67,7 +67,8 @@ body {
 
 	border-radius: 50%;
 	background: var(--warm-white);
-	box-shadow: 3px 3px 8px hsl(202, 24%, 72%), -3px -3px 8px hsla(0, 0%, 98%, 0.937);
+	box-shadow: 3px 3px 8px hsl(202, 24%, 72%),
+		-2px -2px 8px hsla(0, 0%, 98%, 0.937);
 }
 
 .pad--span {
@@ -80,4 +81,14 @@ body {
 	content: "";
 	padding-bottom: 100%;
 	display: block;
+}
+
+.pad:active {
+	background-color: hsl(210, 24%, 85%);
+	box-shadow: inset 3px 3px 6px hsl(202, 24%, 72%),
+		inset -2px -2px 6px hsla(0, 0%, 98%, 0.937);
+}
+
+.Math {
+	color: hsl(219, 89%, 66%);
 }
