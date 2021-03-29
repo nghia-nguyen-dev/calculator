@@ -8,6 +8,8 @@
 
 	--cool-white: hsl(206, 21%, 87%);
 	--warm-white: hsl(210, 21%, 87%);
+
+	--main-color: hsla(210, 42%, 22%, 0.72);
 }
 
 body {
@@ -25,7 +27,7 @@ body {
 	font-family: "Inter", sans-serif;
 	font-weight: 300;
 	font-size: 60px;
-	color: hsla(210, 25%, 22%, 0.75);
+	color: var(--main-color);
 
 	height: auto;
 	width: 362px;
@@ -33,9 +35,10 @@ body {
 
 	border-radius: 36px;
 	background: var(--warm-white);
-	box-shadow: var(--calc-offset-x) var(--calc-offset-y) var(--calc-blur-radius) hsl(202, 24%, 76%),
+	box-shadow: var(--calc-offset-x) var(--calc-offset-y)
+			var(--calc-blur-radius) hsl(202, 24%, 75%),
 		calc(var(--calc-offset-x) * -1) calc(var(--calc-offset-y) * -1)
-			var(--calc-blur-radius) rgba(255, 255, 255, 0.84);
+			var(--calc-blur-radius) rgba(255, 255, 255, 0.83);
 }
 
 .Screen {
@@ -55,7 +58,7 @@ body {
 	/* grid-template-rows: repeat(4, 1fr); */
 }
 
-.Pad {
+.pad {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -64,10 +67,16 @@ body {
 
 	border-radius: 50%;
 	background: var(--warm-white);
-	box-shadow: 3px 3px 8px hsl(202, 24%, 74%), -3px -3px 8px #f9f9f9ef;
+	box-shadow: 3px 3px 8px hsl(202, 24%, 72%), -3px -3px 8px hsla(0, 0%, 98%, 0.937);
 }
 
-.Pad::before {
+.pad--span {
+	grid-column: span 2;
+	height: 71.25px;
+	border-radius: 100px;
+}
+
+.pad::before {
 	content: "";
 	padding-bottom: 100%;
 	display: block;
