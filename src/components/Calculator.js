@@ -1,5 +1,5 @@
-const Calculator = () => {
-	return <div className="Calculator"></div>;
+const Calculator = ({children}) => {
+	return <div className="Calculator">{children}</div>;
 };
 
 export default Calculator;
