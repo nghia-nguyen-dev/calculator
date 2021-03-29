@@ -1,8 +1,30 @@
 import React from "react";
-import Number from 'components/Number'
+import Number from "components/Number";
+import { useDispatch } from "react-redux";
 
-const Math = ({children}) => <div className="Math pad">{children}</div>
-const Misc = ({children}) => <div className="Misc pad">{children}</div>
+const Misc = ({ children }) => {
+	return <div className="Misc pad">{children}</div>;
+};
+const Math = ({ children }) => {
+	const dispatch = useDispatch();
+
+	const handleClick = () => dispatch({ type: "MATH", value: children });
+
+	return (
+		<div className="Math pad" onClick={handleClick}>
+			{children}
+		</div>
+	);
+};
+
+const Compute = ({ children }) => {
+	const dispatch = useDispatch();
+	return (
+		<div className="pad" onClick={() => dispatch({ type: "COMPUTE" })}>
+			{children}
+		</div>
+	);
+};
 
 const Numpad = () => {
 	return (
@@ -12,7 +34,7 @@ const Numpad = () => {
 			<Misc>%</Misc>
 			<Math>&#247;</Math>
 
-        	<Number>7</Number>
+			<Number>7</Number>
 			<Number>8</Number>
 			<Number>9</Number>
 			<Math>&#215;</Math>
@@ -29,7 +51,7 @@ const Numpad = () => {
 
 			<Number className="pad--span">0</Number>
 			<Number>.</Number>
-			<Math>=</Math>
+			<Compute>=</Compute>
 		</div>
 	);
 };

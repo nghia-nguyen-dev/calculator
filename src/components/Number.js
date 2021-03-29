@@ -1,9 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
+
+
 const Number = ({ children, className }) => {
 	const dispatch = useDispatch();
-
 	const handleClick = () =>
 		dispatch({
 			type: "CLICK_NUM",
