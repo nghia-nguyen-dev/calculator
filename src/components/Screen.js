@@ -6,7 +6,9 @@ const Screen = () => {
 	const temp = useSelector(state => state.temp);
 	const compute = useSelector(state => state.compute);
 
-	return <div className="Screen">{value ? value : temp}</div>;
+	return (
+		<div className="Screen">{value ? value : temp === "" ? "0" : temp}</div>
+	);
 };
 
 export default Screen;
