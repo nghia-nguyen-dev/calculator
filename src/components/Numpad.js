@@ -3,7 +3,15 @@ import Number from "components/Number";
 import { useDispatch } from "react-redux";
 
 const Misc = ({ children }) => {
-	return <div className="Misc pad">{children}</div>;
+	const dispatch = useDispatch();
+
+	const handleClick = () => dispatch({ type: children });
+
+	return (
+		<div className="Misc pad" onClick={handleClick}>
+			{children}
+		</div>
+	);
 };
 const Math = ({ children }) => {
 	const dispatch = useDispatch();

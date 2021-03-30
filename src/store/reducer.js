@@ -14,7 +14,7 @@ const math = {
 	"+": add,
 	"−": subtract,
 	"÷": "divide",
-	"×": "multiply",
+	"×": multiply,
 	"=": "equals",
 };
 
@@ -43,6 +43,13 @@ const reducer = (state = init, action) => {
 				...state,
 				temp: math[compute](value, temp),
 				value: "",
+			};
+
+		case "C":
+			return {
+				value: "",
+				temp: "",
+				compute: "",
 			};
 
 		default:
