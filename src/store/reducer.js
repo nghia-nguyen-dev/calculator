@@ -1,44 +1,49 @@
+import { add, multiply, divide } from "ramda";
+
 const init = {
 	value: "",
 	temp: "",
-	mathOp: null,
+	compute: "",
 };
-
-const add = (value, temp) => `${parseInt(temp) + parseInt(value)}`;
-const minus = (value, temp) => `${parseInt(value) - parseInt(temp)}`;
+const subtract = (value, temp) => {
+	if (!temp) return value;
+	return temp - value;
+};
 
 const math = {
 	"+": add,
-	"−": minus,
+	"−": subtract,
 	"÷": "divide",
 	"×": "multiply",
-	"=": 'equals',
+	"=": "equals",
 };
 
 const reducer = (state = init, action) => {
-
+	const { value, temp, compute } = state;
 	switch (action.type) {
 		case "CLICK_NUM":
 			return {
 				...state,
-				value: state.value + action.value,
-			}
+				value: value + action.value,
+			};
 
 		case "MATH":
-
 			return {
 				...state,
-				mathOp: math[action.value],
-				temp: state.value,
+				compute: action.value,
+				temp:
+					math[compute]?.(value, temp) === undefined
+						? value
+						: math[compute](value, temp),
 				value: "",
-			}
+			};
 
 		case "COMPUTE":
 			return {
 				...state,
-				value: state.mathOp(state.temp, state.value)
-			}
-			
+				temp: math[compute](value, temp),
+				value: "",
+			};
 
 		default:
 			return state;
@@ -46,4 +51,3 @@ const reducer = (state = init, action) => {
 };
 
 export default reducer;
-
