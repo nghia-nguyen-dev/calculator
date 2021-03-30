@@ -1,19 +1,10 @@
 import { add, multiply, negate } from "ramda";
+import { subtract, divide } from "utils/helpers";
 
 const init = {
 	value: "",
 	temp: "",
 	compute: "",
-};
-
-const subtract = (value, temp) => {
-	if (!temp) return value;
-	return temp - value;
-};
-
-const divide = (value, temp) => {
-	if (!temp) return value;
-	return temp / value;
 };
 
 const math = {
@@ -62,15 +53,14 @@ const reducer = (state = init, action) => {
 		case "±":
 			return {
 				...state,
-				value: negate(value)
-			}
+				value: negate(value),
+			};
 
 		case "%":
 			return {
 				...state,
-				value: value / 100
-			}
-
+				value: value / 100,
+			};
 
 		default:
 			return state;
