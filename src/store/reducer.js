@@ -65,6 +65,12 @@ const reducer = (state = init, action) => {
 				value: negate(value)
 			}
 
+		case "%":
+			return {
+				...state,
+				value: value / 100
+			}
+
 
 		default:
 			return state;
