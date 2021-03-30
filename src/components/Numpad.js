@@ -8,7 +8,10 @@ const Misc = ({ children }) => {
 	const handleClick = () => dispatch({ type: children });
 
 	return (
-		<div className="Misc pad" onClick={handleClick}>
+		<div
+			className={`Misc pad ${children === "C" ? "clear" : null}`}
+			onClick={handleClick}
+		>
 			{children}
 		</div>
 	);
@@ -28,7 +31,7 @@ const Math = ({ children }) => {
 const Compute = ({ children }) => {
 	const dispatch = useDispatch();
 	return (
-		<div className="pad" onClick={() => dispatch({ type: "COMPUTE" })}>
+		<div className="Math pad" onClick={() => dispatch({ type: "COMPUTE" })}>
 			{children}
 		</div>
 	);

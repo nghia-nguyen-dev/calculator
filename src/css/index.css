@@ -56,7 +56,6 @@ body {
 	display: grid;
 	gap: 15px;
 	grid-template-columns: repeat(4, 1fr);
-	/* grid-template-rows: repeat(4, 1fr); */
 }
 
 .pad {
@@ -91,5 +90,13 @@ body {
 }
 
 .Math {
-	color: coral;
+	color: hsl(219, 82%, 68%);
+}
+
+.Misc {
+	color: hsl(216, 49%, 68%);
+}
+
+.clear {
+	color: hsl(0, 0%, 94%);
 }

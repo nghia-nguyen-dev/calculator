@@ -1,21 +1,26 @@
-import { add, multiply, divide } from "ramda";
+import { add, multiply, negate } from "ramda";
 
 const init = {
 	value: "",
 	temp: "",
 	compute: "",
 };
+
 const subtract = (value, temp) => {
 	if (!temp) return value;
 	return temp - value;
 };
 
+const divide = (value, temp) => {
+	if (!temp) return value;
+	return temp / value;
+};
+
 const math = {
 	"+": add,
 	"−": subtract,
-	"÷": "divide",
+	"÷": divide,
 	"×": multiply,
-	"=": "equals",
 };
 
 const reducer = (state = init, action) => {
@@ -41,7 +46,9 @@ const reducer = (state = init, action) => {
 		case "COMPUTE":
 			return {
 				...state,
-				temp: math[compute](value, temp),
+				temp: value
+					? math[compute](value, temp)
+					: math[compute](temp, temp),
 				value: "",
 			};
 
@@ -51,6 +58,13 @@ const reducer = (state = init, action) => {
 				temp: "",
 				compute: "",
 			};
+
+		case "±":
+			return {
+				...state,
+				value: negate(value)
+			}
+
 
 		default:
 			return state;
