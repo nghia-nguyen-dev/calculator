@@ -24,12 +24,14 @@ const reducer = (state = init, action) => {
 			};
 
 		case "MATH":
+			console.log(math[compute]?.(value, temp))
+
 			return {
 				...state,
 				compute: action.value,
 				temp:
 					math[compute]?.(value, temp) === undefined
-						? value
+						? value ? value : temp
 						: math[compute](value, temp),
 				value: "",
 			};
@@ -41,6 +43,7 @@ const reducer = (state = init, action) => {
 					? math[compute](value, temp)
 					: math[compute](temp, temp),
 				value: "",
+				compute: ""
 			};
 
 		case "C":
