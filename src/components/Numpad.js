@@ -1,41 +1,8 @@
 import React from "react";
 import Number from "components/Number";
-import { useDispatch } from "react-redux";
-
-const Misc = ({ children }) => {
-	const dispatch = useDispatch();
-
-	const handleClick = () => dispatch({ type: children });
-
-	return (
-		<div
-			className={`Misc pad ${children === "C" ? "clear" : null}`}
-			onClick={handleClick}
-		>
-			{children}
-		</div>
-	);
-};
-const Math = ({ children }) => {
-	const dispatch = useDispatch();
-
-	const handleClick = () => dispatch({ type: "MATH", value: children });
-
-	return (
-		<div className="Math pad" onClick={handleClick}>
-			{children}
-		</div>
-	);
-};
-
-const Compute = ({ children }) => {
-	const dispatch = useDispatch();
-	return (
-		<div className="Math pad" onClick={() => dispatch({ type: "COMPUTE" })}>
-			{children}
-		</div>
-	);
-};
+import Compute from "components/Compute";
+import Misc from "components/Misc";
+import Math from "components/Math";
 
 const Numpad = () => {
 	return (
