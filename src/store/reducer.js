@@ -24,7 +24,6 @@ const reducer = (state = init, action) => {
 			};
 
 		case "MATH":
-			console.log(math[compute]?.(value, temp))
 
 			return {
 				...state,
