@@ -38,7 +38,7 @@ const reducer = (state = init, action) => {
 			};
 
 		case "=":
-			if (isEmpty(temp) && isEmpty(value)) return state;
+			if (isEmpty(temp) || isEmpty(value)) return state;
 			return {
 				...state,
 				temp: toString(
