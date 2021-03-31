@@ -1,4 +1,4 @@
-import { add, multiply, negate } from "ramda";
+import { add, multiply, negate, toString } from "ramda";
 import { subtract, divide } from "utils/helpers";
 
 const init = {
@@ -40,9 +40,9 @@ const reducer = (state = init, action) => {
 		case "=":
 			return {
 				...state,
-				temp: value
+				temp: toString(value
 					? math[compute](value, temp)
-					: math[compute](temp, temp),
+					: math[compute](temp, temp)),
 				value: "",
 				compute: "",
 			};
