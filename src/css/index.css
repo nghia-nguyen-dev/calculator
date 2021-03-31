@@ -103,3 +103,13 @@ body {
 .clear {
 	color: hsl(0, 0%, 94%);
 }
+
+.circle {
+	height: 900px;
+	width: 900px;
+	background-color: rgb(240, 166, 57);
+	border-radius: 50%;
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+}
