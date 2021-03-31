@@ -8,7 +8,9 @@ import Numpad from "components/Numpad";
 const App = () => {
 	return (
 		<div className="App">
-			<div className="circle"></div>
+			<div className="circle circle--lg"></div>
+			<div className="circle circle--md"></div>
+			<div className="circle circle--sm"></div>
 			<Calculator>
 				<Screen />
 				<Numpad />

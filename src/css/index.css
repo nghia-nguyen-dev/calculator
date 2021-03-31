@@ -105,11 +105,33 @@ body {
 }
 
 .circle {
+	border-radius: 50%;
+	z-index: -1;
+}
+
+.circle--lg {
 	height: 900px;
 	width: 900px;
-	background-color: rgb(240, 166, 57);
-	border-radius: 50%;
-	position: absolute;
-	z-index: -1;
+	background-color: rgb(233, 133, 39);
 	left: 50%;
+	top: 51%;
+	position: absolute;
+}
+
+.circle--md {
+	position: fixed;
+	height: 300px;
+	width: 300px;
+	background-color: rgb(255, 135, 123);
+	left: -8%;
+	top: 30%;
+}
+
+.circle--sm {
+	height: 100px;
+	width: 100px;
+	background-color: rgb(255, 169, 34);
+	left: 15%;
+	top: 5%;
+	position: absolute;
 }
