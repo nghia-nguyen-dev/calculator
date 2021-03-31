@@ -11,3 +11,4 @@ A functioning minimal neumorphism theme calculator. Design inspired by [dribbble
 -   javascript
 -   React
 -   Redux
+-   Ramda.js
