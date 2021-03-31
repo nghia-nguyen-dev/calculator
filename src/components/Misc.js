@@ -7,7 +7,7 @@ const Misc = ({ children }) => {
 
 	return (
 		<div
-			className={`Misc pad ${children === "C" ? "clear" : null}`}
+			className={`Misc pad ${children === "C" ? "clear" : ""} ${children === "=" ? "Math" : ""}`}
 			onClick={handleClick}
 		>
 			{children}

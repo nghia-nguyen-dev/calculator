@@ -18,19 +18,21 @@ const reducer = (state = init, action) => {
 	const { value, temp, compute } = state;
 	switch (action.type) {
 		case "CLICK_NUM":
+			if (action.value === "." && value.includes(".")) return state;
 			return {
 				...state,
 				value: value + action.value,
 			};
 
 		case "MATH":
-
 			return {
 				...state,
 				compute: action.value,
 				temp:
 					math[compute]?.(value, temp) === undefined
-						? value ? value : temp
+						? value
+							? value
+							: temp
 						: math[compute](value, temp),
 				value: "",
 			};
@@ -42,7 +44,7 @@ const reducer = (state = init, action) => {
 					? math[compute](value, temp)
 					: math[compute](temp, temp),
 				value: "",
-				compute: ""
+				compute: "",
 			};
 
 		case "C":

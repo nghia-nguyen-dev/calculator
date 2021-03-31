@@ -10,6 +10,8 @@
 	--warm-white: hsl(210, 21%, 87%);
 
 	--main-color: hsla(210, 42%, 22%, 0.7);
+
+	--math: hsl(219, 82%, 68%);
 }
 
 body {
@@ -90,12 +92,12 @@ body {
 		inset -2px -2px 6px hsla(0, 0%, 98%, 0.937);
 }
 
-.Math {
-	color: hsl(219, 82%, 68%);
+.Misc {
+	color: hsla(219, 79%, 66%, 0.5);
 }
 
-.Misc {
-	color: hsl(216, 49%, 68%);
+.Math {
+	color: cornflowerblue;
 }
 
 .clear {
