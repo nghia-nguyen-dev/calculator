@@ -38,7 +38,7 @@ body {
 	border-radius: 36px;
 	background: var(--warm-white);
 	box-shadow: var(--calc-offset-x) var(--calc-offset-y)
-			var(--calc-blur-radius) hsl(202, 24%, 75%),
+			var(--calc-blur-radius) hsla(0, 0%, 0%, 0.253),
 		calc(var(--calc-offset-x) * -1) calc(var(--calc-offset-y) * -1)
 			var(--calc-blur-radius) rgba(255, 255, 255, 0.8);
 }
