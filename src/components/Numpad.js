@@ -1,6 +1,5 @@
 import React from "react";
 import Number from "components/Number";
-import Compute from "components/Compute";
 import Misc from "components/Misc";
 import Math from "components/Math";
 
@@ -29,7 +28,7 @@ const Numpad = () => {
 
 			<Number className="pad--span">0</Number>
 			<Number>.</Number>
-			<Compute>=</Compute>
+			<Misc>=</Misc>
 		</div>
 	);
 };

@@ -35,7 +35,7 @@ const reducer = (state = init, action) => {
 				value: "",
 			};
 
-		case "COMPUTE":
+		case "=":
 			return {
 				...state,
 				temp: value
