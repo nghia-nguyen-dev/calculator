@@ -58,16 +58,18 @@ const reducer = (state = init, action) => {
 			};
 
 		case "±":
-			return {
-				...state,
-				value: negate(value),
-			};
+			if (!value && !temp) return state;
+
+			return !value
+				? { ...state, temp: toString(negate(temp)) }
+				: { ...state, value: toString(negate(value)) };
 
 		case "%":
-			return {
-				...state,
-				value: value / 100,
-			};
+			if (!value && !temp) return state;
+
+			return !value
+				? { ...state, temp: toString(temp / 100) }
+				: { ...state, value: toString(value / 100) };
 
 		default:
 			return state;
