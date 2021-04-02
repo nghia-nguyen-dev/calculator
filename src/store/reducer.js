@@ -24,7 +24,7 @@ const reducer = (state = init, action) => {
 				value: value + action.value,
 			};
 
-		case "MATH":
+		case "CLICK_MATH":
 			return {
 				...state,
 				compute: action.value,
