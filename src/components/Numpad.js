@@ -26,7 +26,7 @@ const Numpad = () => {
 			<Number>3</Number>
 			<Math>+</Math>
 
-			<Number className="pad--span">0</Number>
+			<Number>0</Number>
 			<Number>.</Number>
 			<Misc>=</Misc>
 		</div>
