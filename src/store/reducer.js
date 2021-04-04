@@ -18,6 +18,7 @@ const reducer = (state = init, action) => {
 	const { value, temp, compute } = state;
 	switch (action.type) {
 		case "CLICK_NUM":
+			if (action.value === "0" && value === "0") return state;
 			if (action.value === "." && value.includes(".")) return state;
 			return {
 				...state,
