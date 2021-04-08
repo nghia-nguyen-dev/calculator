@@ -59,7 +59,7 @@ const reducer = (state = init, action) => {
 			};
 
 		case "±":
-			if (!value && !temp || value === "0" || temp === "0") return state;
+			if ((!value && !temp) || (value === "0" || temp === "0")) return state;
 
 			return !value
 				? { ...state, temp: toString(negate(temp)) }
