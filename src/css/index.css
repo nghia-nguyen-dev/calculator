@@ -48,10 +48,9 @@ body {
 	border-radius: 20px;
 	height: 170px;
 	letter-spacing: -3px;
-
 	display: flex;
 	justify-content: flex-end;
-	align-items: end;
+	align-items: flex-end;
 	margin-bottom: 20px;
 }
 
